@@ -1,18 +1,44 @@
 <template>
-  <div class="container">
+  <div class="login-container">
+    <el-card class="login-card">
+      <div class="btn-wrapper">
+        <el-button @click="handleGoogleLogin" type="success" style="">Login with Google</el-button>
+      </div>
+      
+      <el-form :model="loginForm">
+        <div style="margin-bottom: 20px;">
+          <el-input
+            placeholder="メールアドレス"
+            v-model="mail_address"
+            clearable>
+          </el-input>
+        </div>
+        <div style="margin-bottom: 40px;">
+          <el-input
+            placeholder="パスワード"
+            v-model="password"
+            show-password>
+          </el-input>
+        </div>
+      </el-form>
 
-    <vue-recaptcha
-      ref="recaptcha"
-      @verify="onVerify"
-      sitekey="6Ld9VBQbAAAAADeagY_xkP-SuCqnzaeLyNdZvc0T"
-      @expired="onExpired"
-    ></vue-recaptcha>
-    <div class="new_registration">新規会員登録</div>
-    <el-button @click="handleGoogleLogin">Login with Google</el-button>
-    <el-button @click="handleLogout">Logout</el-button>
+       
+      <vue-recaptcha
+        ref="recaptcha"
+        @verify="onVerify"
+        sitekey="6Ld9VBQbAAAAADeagY_xkP-SuCqnzaeLyNdZvc0T"
+        @expired="onExpired"
+      ></vue-recaptcha>
 
+      <div class="btn-wrapper">
+        <el-button @click="handleLogout" type="success">Logout</el-button>
+      </div>
+
+    </el-card>
   </div>
 </template>
+
+
 <script>
 import cookie from "js-cookie";
 import { getLoginInfo } from "@/api/userApi";
@@ -23,6 +49,8 @@ export default {
   data() {
     return {
       robot: true,
+      mail_address: '',
+      password: '',
     };
   },
   head() {
@@ -128,10 +156,29 @@ export default {
 </script>
 <style scoped>
 
-  .new_registration {
-    font-size: 1000px;
+  .login-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* font of new registration title
+  .registration_title {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 800;
 
   }
+  */
+
+  .btn-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+    
+  }
+    
+  
 
 </style>
 
