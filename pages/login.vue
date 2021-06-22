@@ -7,7 +7,7 @@
       sitekey="6Ld9VBQbAAAAADeagY_xkP-SuCqnzaeLyNdZvc0T"
       @expired="onExpired"
     ></vue-recaptcha>
-
+    <div class="new_registration">新規会員登録</div>
     <el-button @click="handleGoogleLogin">Login with Google</el-button>
     <el-button @click="handleLogout">Logout</el-button>
 
@@ -127,6 +127,11 @@ export default {
 };
 </script>
 <style scoped>
+
+  .new_registration {
+    font-size: 1000px;
+
+  }
 
 </style>
 
