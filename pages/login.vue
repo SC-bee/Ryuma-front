@@ -29,9 +29,15 @@
         sitekey="6Ld9VBQbAAAAADeagY_xkP-SuCqnzaeLyNdZvc0T"
         @expired="onExpired"
       ></vue-recaptcha>
-
+      
+      <!-- logout
       <div class="btn-wrapper">
         <el-button @click="handleLogout" type="success">Logout</el-button>
+      </div>
+      -->
+
+      <div class="btn-wrapper" style="margin-top: 20px;">
+        <el-button type="success">ログイン</el-button>
       </div>
 
     </el-card>
