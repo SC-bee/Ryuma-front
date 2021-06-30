@@ -167,15 +167,6 @@ export default {
     margin: 0 auto;
   }
 
-  /* font of new registration title
-  .registration_title {
-    font-size: 32px;
-    text-align: center;
-    font-weight: 800;
-
-  }
-  */
-
   .btn-wrapper {
     display: inline-flex;
     flex-direction: column;
